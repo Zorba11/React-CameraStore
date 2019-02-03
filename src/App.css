@@ -1,0 +1,27 @@
+:root {
+  --primaryColor: #19a714;
+  --secondaryColor: #9ee958;
+  --mainWhite: #f3f3f3;
+  --mainDark: #232528;
+  --mainGreen: #179728;
+}
+
+body {
+  font-family: "Raleway", sans-serif !important;
+  background: var(--mainWhite) !important;
+  color: var(--mainDark) !important;
+}
+
+.text-title {
+  font-family: "Merriweather", serif;
+  letter-spacing: 0.3rem;
+  text-transform: uppercase;
+}
+
+.text-green {
+  color: var(--mainGreen);
+}
+
+.text-bright {
+  color: var(--secondaryColor);
+}
