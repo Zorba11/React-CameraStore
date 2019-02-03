@@ -1,7 +1,7 @@
 /* 
-https://www.iconfinder.com/icons/1243689/call_phone_icon
-Creative Commons (Attribution 3.0 Unported);
-https://www.iconfinder.com/Makoto_msk */
+https://www.iconfinder.com/icons/118846/camera_photo_icon
+Attribution-Non-Commercial 3.0 Netherlands;
+from tango icon library http://tango.freedesktop.org/Tango_Desktop_Project*/
 
 export const storeProducts = [
   {
