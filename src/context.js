@@ -9,12 +9,12 @@ class ProductProvider extends Component {
   state = {
     products: [],
     detailProduct: detailProduct,
-    cart: [],
+    cart: storeProducts,
     modelOpen: false,
     modelProduct: detailProduct,
     cartSubTotal: 0,
     cartTax: 0,
-    cartTotal
+    cartTotal: 0
   };
   componentDidMount() {
     this.setProducts();
@@ -42,6 +42,7 @@ class ProductProvider extends Component {
     });
   };
   addToCart = id => {
+    console.log("added");
     let tempProducts = [...this.state.products];
     const index = tempProducts.indexOf(this.getItem(id));
     const product = tempProducts[index];
@@ -50,12 +51,7 @@ class ProductProvider extends Component {
     const price = product.price;
     product.total = price;
     this.setState(() => {
-      return (
-        { products: tempProducts, cart: [...this.state.cart, product] },
-        () => {
-          console.log(this.state);
-        }
-      );
+      return { products: tempProducts, cart: [...this.state.cart, product] };
     });
   };
   openModel = id => {
@@ -78,6 +74,9 @@ class ProductProvider extends Component {
   removeItem = id => {
     console.log("item removed");
   };
+  clearCart = () => {
+    console.log("cart cleared");
+  };
 
   render() {
     return (
@@ -87,7 +86,11 @@ class ProductProvider extends Component {
           handleDetail: this.handleDetail,
           addToCart: this.addToCart,
           openModel: this.openModel,
-          closeModel: this.closeModel
+          closeModel: this.closeModel,
+          increment: this.increment,
+          decrement: this.decrement,
+          removeItem: this.removeItem,
+          clearCart: this.clearCart
         }}
       >
         {this.props.children}
